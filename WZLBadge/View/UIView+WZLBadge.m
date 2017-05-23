@@ -79,6 +79,14 @@
     if (self.badge.tag != WBadgeStyleRedDot) {
         self.badge.text = @"";
         self.badge.tag = WBadgeStyleRedDot;
+        
+        CGRect frame = self.badge.frame;
+        frame.size.width = 8;
+        frame.size.height = 8;
+        self.badge.frame = frame;
+        
+        self.badge.center = CGPointMake(CGRectGetWidth(self.frame) + 2 + self.badgeCenterOffset.x, self.badgeCenterOffset.y);
+        
         self.badge.layer.cornerRadius = CGRectGetWidth(self.badge.frame) / 2;
     }
     self.badge.hidden = NO;
